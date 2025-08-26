@@ -1,0 +1,308 @@
+//question no 1 
+import java.util.Scanner;
+
+public class OddEvenNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        if (number >= 1) {
+            for (int i = 1; i <= number; i++) {
+                if (i % 2 == 0) {
+                    System.out.println(i + " is even");
+                } else {
+                    System.out.println(i + " is odd");
+                }
+            }
+        } else {
+            System.out.println("Not a natural number");
+        }
+    }
+}
+//question no 2
+import java.util.Scanner;
+
+public class EmployeeBonus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double salary = sc.nextDouble();
+        int years = sc.nextInt();
+
+        if (years > 5) {
+            double bonus = salary * 0.05;
+            System.out.println("Bonus = " + bonus);
+        } else {
+            System.out.println("No bonus");
+        }
+    }
+}
+// question no 3
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        for (int i = 6; i <= 9; i++) {
+            System.out.println(number + " * " + i + " = " + (number * i));
+        }
+    }
+}
+// question no 4 import java.util.Scanner;
+
+public class FizzBuzzFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n > 0) {
+            for (int i = 1; i <= n; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    System.out.println("FizzBuzz");
+                } else if (i % 3 == 0) {
+                    System.out.println("Fizz");
+                } else if (i % 5 == 0) {
+                    System.out.println("Buzz");
+                } else {
+                    System.out.println(i);
+                }
+            }
+        } else {
+            System.out.println("Not a positive integer");
+        }
+    }
+}
+// question no 5
+import java.util.Scanner;
+
+public class FizzBuzzWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n > 0) {
+            int i = 1;
+            while (i <= n) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    System.out.println("FizzBuzz");
+                } else if (i % 3 == 0) {
+                    System.out.println("Fizz");
+                } else if (i % 5 == 0) {
+                    System.out.println("Buzz");
+                } else {
+                    System.out.println(i);
+                }
+                i++;
+            }
+        } else {
+            System.out.println("Not a positive integer");
+        }
+    }
+}
+
+// questionno 6
+import java.util.Scanner;
+
+public class FriendsCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int ageAmar = sc.nextInt();
+        int heightAmar = sc.nextInt();
+
+        int ageAkbar = sc.nextInt();
+        int heightAkbar = sc.nextInt();
+
+        int ageAnthony = sc.nextInt();
+        int heightAnthony = sc.nextInt();
+
+        // Youngest
+        if (ageAmar < ageAkbar && ageAmar < ageAnthony) {
+            System.out.println("Amar is the youngest");
+        } else if (ageAkbar < ageAmar && ageAkbar < ageAnthony) {
+            System.out.println("Akbar is the youngest");
+        } else {
+            System.out.println("Anthony is the youngest");
+        }
+
+        // Tallest
+        if (heightAmar > heightAkbar && heightAmar > heightAnthony) {
+            System.out.println("Amar is the tallest");
+        } else if (heightAkbar > heightAmar && heightAkbar > heightAnthony) {
+            System.out.println("Akbar is the tallest");
+        } else {
+            System.out.println("Anthony is the tallest");
+        }
+    }
+}
+
+// question no  7
+import java.util.Scanner;
+
+public class FactorsFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        if (number > 0) {
+            for (int i = 1; i < number; i++) {
+                if (number % i == 0) {
+                    System.out.println(i);
+                }
+            }
+        } else {
+            System.out.println("Not a positive integer");
+        }
+    }
+}
+
+// question no 8 
+import java.util.Scanner;
+
+public class FactorsWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        if (number > 0) {
+            int i = 1;
+            while (i < number) {
+                if (number % i == 0) {
+                    System.out.println(i);
+                }
+                i++;
+            }
+        } else {
+            System.out.println("Not a positive integer");
+        }
+    }
+}
+
+// question no 9 
+import java.util.Scanner;
+
+public class GreatestFactorFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int greatestFactor = 1;
+
+        for (int i = number - 1; i >= 1; i--) {
+            if (number % i == 0) {
+                greatestFactor = i;
+                break;
+            }
+        }
+        System.out.println("Greatest factor beside itself = " + greatestFactor);
+    }
+}
+
+// question no 10
+import java.util.Scanner;
+
+public class GreatestFactorWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int greatestFactor = 1;
+
+        int counter = number - 1;
+        while (counter >= 1) {
+            if (number % counter == 0) {
+                greatestFactor = counter;
+                break;
+            }
+            counter--;
+        }
+        System.out.println("Greatest factor beside itself = " + greatestFactor);
+    }
+}
+
+// questiion no 11
+import java.util.Scanner;
+
+public class MultiplesFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        if (number > 0 && number < 100) {
+            for (int i = 100; i >= 1; i--) {
+                if (i % number == 0) {
+                    System.out.println(i);
+                }
+            }
+        } else {
+            System.out.println("Number must be between 1 and 99");
+        }
+    }
+}
+
+// question no 12
+import java.util.Scanner;
+
+public class PowerFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int power = sc.nextInt();
+        int result = 1;
+
+        if (number >= 0 && power >= 0) {
+            for (int i = 1; i <= power; i++) {
+                result *= number;
+            }
+            System.out.println(number + "^" + power + " = " + result);
+        } else {
+            System.out.println("Enter positive integers only");
+        }
+    }
+}
+
+// question no 13
+import java.util.Scanner;
+
+public class MultiplesWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        if (number > 0 && number < 100) {
+            int counter = 100;
+            while (counter >= 1) {
+                if (counter % number == 0) {
+                    System.out.println(counter);
+                }
+                counter--;
+            }
+        } else {
+            System.out.println("Number must be between 1 and 99");
+        }
+    }
+}
+// questiion no  14
+import java.util.Scanner;
+
+public class PowerWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int power = sc.nextInt();
+        int result = 1;
+        int counter = 0;
+
+        if (number >= 0 && power >= 0) {
+            while (counter < power) {
+                result *= number;
+                counter++;
+            }
+            System.out.println(number + "^" + power + " = " + result);
+        } else {
+            System.out.println("Enter positive integers only");
+        }
+    }
+}
+
+
+
