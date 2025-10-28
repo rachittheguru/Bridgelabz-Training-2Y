@@ -1,0 +1,30 @@
+class Vehicle {
+    String ownerName;
+    String vehicleType;
+    static double registrationFee = 5000;
+
+    Vehicle(String ownerName, String vehicleType) {
+        this.ownerName = ownerName;
+        this.vehicleType = vehicleType;
+    }
+
+    void displayVehicleDetails() {
+        System.out.println("Owner: " + ownerName + ", Type: " + vehicleType + ", Registration Fee: ₹" + registrationFee);
+    }
+
+    static void updateRegistrationFee(double newFee) {
+        registrationFee = newFee;
+        System.out.println("Updated Registration Fee: ₹" + registrationFee);
+    }
+
+    public static void main(String[] args) {
+        Vehicle v1 = new Vehicle("Rachit", "Car");
+        Vehicle v2 = new Vehicle("Aarav", "Bike");
+
+        v1.displayVehicleDetails();
+        v2.displayVehicleDetails();
+
+        Vehicle.updateRegistrationFee(6000);
+        v1.displayVehicleDetails();
+    }
+}
