@@ -1,0 +1,17 @@
+interface SensitiveData {}  
+
+class CreditCardInfo implements SensitiveData {
+    String cardNumber = "1234-5678-9012-3456";
+}
+
+public class DataSecurity {
+    public static void main(String[] args) {
+        Object obj = new CreditCardInfo();
+
+        if (obj instanceof SensitiveData) {
+            System.out.println("⚠️ Encrypt before storing!");
+        } else {
+            System.out.println("No encryption needed.");
+        }
+    }
+}

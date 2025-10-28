@@ -1,0 +1,53 @@
+
+interface Device {
+    void turnOn();
+    void turnOff();
+}
+
+class Light implements Device {
+    @Override
+    public void turnOn() {
+        System.out.println("Light is turned on.");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("Light is turned off.");
+    }
+}
+
+class AC implements Device {
+    @Override
+    public void turnOn() {
+        System.out.println("AC is turned on.");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("AC is turned off.");
+    }
+}
+
+class TV implements Device {
+    @Override
+    public void turnOn() {
+        System.out.println("TV is turned on.");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("TV is turned off.");
+    }
+}
+
+public class SmartDeviceDemo {
+    public static void main(String[] args) {
+        Device light = new Light();
+        Device ac = new AC();
+        Device tv = new TV();
+
+        light.turnOn();
+        ac.turnOff();
+        tv.turnOn();
+    }
+}

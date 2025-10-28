@@ -1,0 +1,26 @@
+interface Vehicle {
+    void displaySpeed();
+
+    default void displayBattery() {
+        System.out.println("Battery info not available for this vehicle.");
+    }
+}
+
+class ElectricCar implements Vehicle {
+    public void displaySpeed() {
+        System.out.println("Speed: 80 km/h");
+    }
+
+    @Override
+    public void displayBattery() {
+        System.out.println("Battery: 85%");
+    }
+}
+
+public class Dashboard {
+    public static void main(String[] args) {
+        Vehicle car = new ElectricCar();
+        car.displaySpeed();
+        car.displayBattery();
+    }
+}
