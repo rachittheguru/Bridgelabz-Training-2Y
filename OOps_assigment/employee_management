@@ -1,0 +1,40 @@
+import java.util.*;
+@Override
+public double calculateSalary(){
+return hoursWorked * hourlyRate;
+}
+
+
+
+interface Department{
+void assignDepartment(String dept);
+String getDepartmentDetails();
+}
+
+
+class DepartmentImpl implements Department{
+private String dept;
+@Override
+public void assignDepartment(String dept){ this.dept = dept; }
+@Override
+public String getDepartmentDetails(){ return dept == null ? "Unassigned" : dept; }
+}
+
+
+public class EmployeeManagementDemo{
+public static void main(String[] args){
+List<Employee> employees = new ArrayList<>();
+employees.add(new FullTimeEmployee("F001","Rachit",50000,8000));
+employees.add(new PartTimeEmployee("P001","Asha",400,80));
+
+
+for(Employee e : employees){
+e.displayDetails();
+}
+
+
+Department hr = new DepartmentImpl();
+hr.assignDepartment("Human Resources");
+System.out.println("Dept: " + hr.getDepartmentDetails());
+}
+}

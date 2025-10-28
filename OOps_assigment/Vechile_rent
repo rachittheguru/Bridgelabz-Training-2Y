@@ -1,0 +1,66 @@
+import java.util.*;
+
+
+abstract class Vehicle{
+private String vehicleNumber;
+private String type;
+private double rentalRate;
+
+
+public Vehicle(String num,String type,double rate){ this.vehicleNumber = num; this.type = type; this.rentalRate = rate; }
+public String getVehicleNumber(){ return vehicleNumber; }
+public String getType(){ return type; }
+public double getRentalRate(){ return rentalRate; }
+public void setRentalRate(double r){ this.rentalRate = r; }
+
+
+public abstract double calculateRentalCost(int days);
+}
+
+
+interface Insurable{
+double calculateInsurance();
+String getInsuranceDetails();
+}
+
+
+class Car extends Vehicle implements Insurable{
+public Car(String num,double rate){ super(num,"Car",rate); }
+@Override public double calculateRentalCost(int days){ return getRentalRate() * days + 500; }
+@Override public double calculateInsurance(){ return 2000; }
+@Override public String getInsuranceDetails(){ return "Car insurance policy"; }
+}
+
+
+class Bike extends Vehicle implements Insurable{
+public Bike(String num,double rate){ super(num,"Bike",rate); }
+@Override public double calculateRentalCost(int days){ return getRentalRate() * days; }
+@Override public double calculateInsurance(){ return 500; }
+@Override public String getInsuranceDetails(){ return "Bike insurance"; }
+}
+
+
+class Truck extends Vehicle{
+public Truck(String num,double rate){ super(num,"Truck",rate); }
+@Override public double calculateRentalCost(int days){ return getRentalRate() * days + 1500; }
+}
+
+
+public class VehicleRentalDemo{
+public static void main(String[] args){
+List<Vehicle> fleet = Arrays.asList(
+new Car("KA-01-1234",2500),
+new Bike("KA-01-5678",500),
+new Truck("KA-01-9999",4000)
+);
+
+
+for(Vehicle v : fleet){
+System.out.println(v.getType() + " " + v.getVehicleNumber() + ": Rent for 3 days = " + v.calculateRentalCost(3));
+if(v instanceof Insurable){
+Insurable ins = (Insurable)v;
+System.out.println(" Insurance: " + ins.calculateInsurance() + " (" + ins.getInsuranceDetails() + ")");
+}
+}
+}
+}
